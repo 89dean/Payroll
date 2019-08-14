@@ -48,7 +48,7 @@ public class RaceRepositoryImplTest {
 
         raceRepository.create(employee);
         Race inRepo = raceRepository.read(employee.getId());
-        employee.setDescription("dean Allen");
+        employee.setDescription("dean February");
         raceRepository.update(employee);
         Assert.assertEquals(employee.getDescription(), inRepo.getDescription());
     }
