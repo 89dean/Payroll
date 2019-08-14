@@ -10,6 +10,7 @@ import com.dean.factory.demography.RaceFactory;
 import com.dean.factory.user.EmployeeFactory;
 import com.dean.factory.user.EmployeeGenderFactory;
 import com.dean.factory.user.EmployeeRaceFactory;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -29,12 +30,13 @@ public class EmployeeControllerTest {
     public void create() {
         Gender gender = GenderFactory.buildGender("Male");
         Race race = RaceFactory.buildRace("Coloured");
-        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender("123", "123");
-        EmployeeRace employeeRace = EmployeeRaceFactory.buildEmployeeRace("123", "123");
+        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender("000", "999");
+        EmployeeRace employeeRace = EmployeeRaceFactory.buildEmployeeRace("888", "333");
         Employee employee = EmployeeFactory.buildEmployee("dean", "February");
 
-        //employeeController.create(employee.getEmployeeNumber(), employee.getEmployeeFirstName() ,employee.getEmployeeLastName(), gender.getId(),race.getId());
 
-        employeeController.create("dean", "February", 123, 456);
+        employeeController.create("dean", "February", "123", "456");
+        Assert.assertNotNull(employeeController);
+
     }
 }
